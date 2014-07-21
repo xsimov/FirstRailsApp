@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 		render "welcome"
 	end
 	def contact
-		render "contact"
+		
 	end
 end
