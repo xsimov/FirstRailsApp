@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140721103532) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "city"
-    t.integer  "zip_code"
+    t.string   "zip_code"
     t.string   "street"
     t.string   "country"
     t.text     "description"
