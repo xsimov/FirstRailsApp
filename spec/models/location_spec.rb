@@ -12,3 +12,16 @@ RSpec.describe "iron_find super-method", :type => :model do
   	expect(l).to eq(l2)
   end
 end
+
+RSpec.describe "last_created method", :type => :model do
+
+	before(:each) do
+	  @l1 = Location.create id: 1, name: 'Home', city: ''
+	  @l2 = Location.create id: 2, name: 'Work', city: 'Barcelona'
+	end
+
+  it "returns the last n created locs" do
+  	last = Location.last_created(10)
+  	expect(last).to eq([@l1, @l2])
+  end
+end
