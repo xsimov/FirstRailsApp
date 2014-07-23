@@ -1,7 +1,7 @@
-<h1>Locations</h1>
 <ul>
-	<% @locations.each do |loc| %>
-	<li><%= loc.name %><%= (" - " + loc.city) if loc.city != nil%>
-	<%= (" ...this is not in Spain!") unless loc.in_spain? %></li>
+	<% @locations.each do |location|  %>
+	<% if location.name.present? %>
+		<li><%= location.name %> - <span><%= location.city %></span> - <span><%= location.description %></span> - <span><%= location.zip_code %></span> - <span><%= location.country %></span></li>
 	<% end %>
+<% end %>
 </ul>

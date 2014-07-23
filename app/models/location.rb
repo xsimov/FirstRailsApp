@@ -1,17 +1,25 @@
 class Location < ActiveRecord::Base
+	has_many :visits
 
-	scope :ideed, -> { order("ID") }
-
-	def self.iron_find(id)
-		where(id: id).first       #limit 1!!
+	validates :name, :city, presence: true
+	validates :name, uniqueness: true
+	def self.iron_find (value)
+		Location.where(id: value).first
 	end
 
-	def self.last_created(n)
-		Location.ideed.limit(n)
+	scope :last_created, ->(value) { Location.last(value) }
+
+	def self.in_spain? 
+		if Location.country == 'Spain'
+			
+		end
 	end
 
-	def in_spain?
-		return true unless country == nil
-		return false
+	def total_number_visits_month(month, year)
+		return nil if month == nil or year == nil
+		date_start = Time.new(year, month, 1)
+		date_end = date_start + 1.month - 1.day
+		visits_month = self.visits.where(from_date: date_start..date_end)
+		visits_month.length
 	end
 end

@@ -13,15 +13,23 @@ RSpec.describe "iron_find super-method", :type => :model do
   end
 end
 
-RSpec.describe "last_created method", :type => :model do
+RSpec.describe "Location class", :type => :model do
 
 	before(:each) do
-	  @l1 = Location.create id: 1, name: 'Home', city: ''
+	  @l1 = Location.create id: 1, name: 'Home', city: 'Vilassar de Mar'
 	  @l2 = Location.create id: 2, name: 'Work', city: 'Barcelona'
 	end
 
   it "returns the last n created locs" do
   	last = Location.last_created(10)
   	expect(last).to eq([@l1, @l2])
+  end
+
+  it "is valid" do
+    @l1.should be_valid
+  end
+
+  it "' name is valid (unique and present)'" do
+    @l1.errors[:name].should be_empty
   end
 end

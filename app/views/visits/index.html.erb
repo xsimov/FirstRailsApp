@@ -1,0 +1,7 @@
+<ul>
+	<% @visits.each do |visit|  %>
+	<% if visit.user_name.present? %>
+		<li><a href="/locations/<%= visit.location_id %>/visits/<%= visit.id %>"><%= visit.user_name %></a></li>
+	<% end %>
+<% end %>
+</ul>

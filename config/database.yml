@@ -20,7 +20,6 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: Xavier
 
 development:
   <<: *default
@@ -82,5 +81,5 @@ test:
 production:
   <<: *default
   database: meet_me_production
-  username: meet_me
+  username: oscarblancocastan
   password: <%= ENV['MEET_ME_DATABASE_PASSWORD'] %>
