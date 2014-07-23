@@ -26,10 +26,10 @@ RSpec.describe "Location class", :type => :model do
   end
 
   it "is valid" do
-    @l1.should be_valid
+    expect(@l1).to be_valid
   end
 
-  it "' name is valid (unique and present)'" do
-    @l1.errors[:name].should be_empty
+  it "name is valid (unique and present)" do
+    expect(@l1.errors[:name]).to be_empty
   end
 end
