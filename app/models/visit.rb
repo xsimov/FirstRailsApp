@@ -9,13 +9,13 @@ class Visit < ActiveRecord::Base
 
 	def from_date_is_in_the_future
 		if from_date.to_i < Time.now.to_i
-			errors.add(:from_date, "From Date is in the past!")
+			errors.add(:from_date, "is in the past!")
 		end
 	end
 
 	def to_date_is_before_from_date
 		if from_date.to_i > to_date.to_i
-			errors.add(:to_date, "From Date is after To Date!")
+			errors.add(:to_date, "is before from_date")
 		end
 	end
 end
