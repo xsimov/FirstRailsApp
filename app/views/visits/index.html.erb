@@ -1,6 +1,11 @@
+
+
 <ul>
 	<% @visits.each do |visit|  %>
-		<li><%= link_to visit.user_name, location_visit_path(visit.location_id, visit.id) %></a></li>
+		<li>
+		<%= link_to visit.user_name, location_visit_path(visit.location_id, visit.id) %>
+		 <%= link_to "Delete visit", location_visit_path(@location, visit), method: 'delete', confirm: "Are you sure?" %>
+		</a></li>
 <% end %>
 </ul>
 <%= link_to "Back to #{@location.name}", location_path(@location) %>

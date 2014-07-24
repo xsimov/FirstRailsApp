@@ -34,6 +34,16 @@ class VisitsController < ApplicationController
 		end
 	end
 
+	def destroy
+		visit = Visit.find(params[:id])
+		location = Location.find(params[:location_id])
+		if visit.destroy
+			redirect_to location_visits_path location
+		else
+			render "could_not_find"
+		end
+	end
+
 	private
 	def visit_params
 		params.require(:visit).permit(:user_name, :from_date, :to_date)
