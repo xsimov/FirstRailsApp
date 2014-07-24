@@ -8,10 +8,10 @@ Location.create name: 'Home', city: 'Vilassar de Mar', description: 'The place w
 Location.create name: 'Work', city: 'Barcelona', description: 'The place where I make money', zip_code: "08015", street: "Urgell", country: "Spain"
 Location.create name: 'MOB', city: 'Barcelona', description: 'The place where I learn coding', zip_code: "08015", street: "Bailèn", country: "Spain"
 
-Visit.create user_name: "JoseLuis", from_date: (Time.now + 1.week), to_date: (Time.now + 8.weeks), location_id: 3
-Visit.create user_name: "Xavier", from_date: (Time.now + 4.month), to_date: (Time.now + 2.month), location_id: 2
-Visit.create user_name: "Xavier", from_date: (Time.now + 1.month), to_date: (Time.now + 2.year), location_id: 1
-Visit.create user_name: "JoseLuis", from_date: (Time.now + 1.year), to_date: (Time.now + 1.year + 1.week), location_id: 2
+Visit.create user_id: 1, from_date: (Time.now + 1.week), to_date: (Time.now + 8.weeks), location_id: 3, user_id: 1
+Visit.create user_id: 2, from_date: (Time.now + 4.month), to_date: (Time.now + 2.month), location_id: 2, user_id: 2
+Visit.create user_id: 3, from_date: (Time.now + 1.month), to_date: (Time.now + 2.year), location_id: 1, user_id: 3
+Visit.create user_id: 1, from_date: (Time.now + 1.year), to_date: (Time.now + 1.year + 1.week), location_id: 2, user_id: 1
 
 User.create user_name: "xsimov", first_name: "Xavier", last_name: "Simó"
 User.create user_name: "darioc", first_name: "Dario", last_name: "Cavanillas"

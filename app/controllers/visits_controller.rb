@@ -3,11 +3,16 @@ class VisitsController < ApplicationController
 	def index
 		@location = Location.find(params[:location_id])
 		@visits = Visit.where(location: params[:location_id]).order(created_at: :desc).last_created(10)
+		@user_name = {}
+		@visits.each do |visit|
+			@user_name[visit.id] = User.find(visit.user_id).user_name
+		end
 	end
 
 	def show
 		@location = Location.find(params[:location_id])
 		@visits = Visit.find(params[:id])
+		@user_name = User.find(@visits.user_id).user_name
 	rescue ActiveRecord::RecordNotFound
 		render 'not_found', status: 404
 	end
@@ -60,7 +65,7 @@ class VisitsController < ApplicationController
 
 	private
 	def visit_params
-		params.require(:visit).permit(:user_name, :from_date, :to_date)
+		params.require(:visit).permit(:user_id, :from_date, :to_date)
 	end
 
 end

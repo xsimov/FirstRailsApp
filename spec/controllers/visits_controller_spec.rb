@@ -6,7 +6,7 @@ RSpec.describe VisitsController, :type => :controller do
 
 		before(:each) do
 			@location = Location.create name: "mob", city: "Barcelona"
-			@visit = Visit.create location_id: @location.id, user_name: "MOB", from_date: Time.now + 1.week, to_date: Time.now + 2.weeks
+			@visit = Visit.create location_id: @location.id, user_id: 1, from_date: Time.now + 1.week, to_date: Time.now + 2.weeks
 		end
 
 		it "has a 200 status code" do
@@ -28,7 +28,7 @@ RSpec.describe VisitsController, :type => :controller do
 	context "create" do
 		before(:each) do
 		  @location = Location.create name: "Wok", city: "Barcelona"
-		  @visit = Visit.create location_id: @location.id, user_name: "Albert", from_date: Time.now + 1.day, to_date: Time.now + 2.day
+		  @visit = Visit.create location_id: @location.id, user_id: 1, from_date: Time.now + 1.day, to_date: Time.now + 2.day
 		end
 
 		it "renders the specific location when canceled" do
