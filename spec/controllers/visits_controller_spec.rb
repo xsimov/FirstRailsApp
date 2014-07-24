@@ -5,8 +5,9 @@ RSpec.describe VisitsController, :type => :controller do
 	context 'show' do
 
 		before(:each) do
+			@user = User.create user_name: "xsimov", first_name: "Xavier", last_name: "Simó"
 			@location = Location.create name: "mob", city: "Barcelona"
-			@visit = Visit.create location_id: @location.id, user_id: 1, from_date: Time.now + 1.week, to_date: Time.now + 2.weeks
+			@visit = Visit.create location_id: @location.id, user_id: @user.id, from_date: Time.now + 1.week, to_date: Time.now + 2.weeks
 		end
 
 		it "has a 200 status code" do
