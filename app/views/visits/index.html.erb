@@ -1,7 +1,6 @@
 <ul>
 	<% @visits.each do |visit|  %>
-	<% if visit.user_name.present? %>
-		<li><a href="/locations/<%= visit.location_id %>/visits/<%= visit.id %>"><%= visit.user_name %></a></li>
-	<% end %>
+		<li><%= link_to visit.user_name, location_visit_path(visit.location_id, visit.id) %></a></li>
 <% end %>
 </ul>
+<%= link_to "Back to #{@location.name}", location_path(@location) %>

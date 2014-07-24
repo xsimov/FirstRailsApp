@@ -5,7 +5,8 @@
 </head>
 <body>
 	<ul>
-		<li><%= @locations.name %> - <%= @locations.description %></li>
+		<li><%= @location.name %> -- <span><%= @location.description %></span> - <span><%= @location.city %></span> <%= @location.zip_code %></span> - <span><%= @location.country %></span> <%= link_to "See the visits", location_visits_path(@location) %> <%= link_to "Create another visit", new_location_visit_path(@location) %></li>
 	</ul>
+<%= link_to "Back to all locations...", locations_path %>
 </body>
 </html>

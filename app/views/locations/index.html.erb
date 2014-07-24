@@ -1,7 +1,8 @@
 <ul>
 	<% @locations.each do |location|  %>
 	<% if location.name.present? %>
-		<li><%= location.name %> - <span><%= location.city %></span> - <span><%= location.description %></span> - <span><%= location.zip_code %></span> - <span><%= location.country %></span></li>
+		<li><%= link_to location.name, location_path(location) %> - <span><%= location.city %></span> </li>
 	<% end %>
 <% end %>
 </ul>
+<%= link_to "Back to the Welcome page", root_path %>

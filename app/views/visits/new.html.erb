@@ -20,4 +20,6 @@
 	<%= f.datetime_select(:to_date, default: Time.now + 1.day) %>
 	<br/>
 	<%= f.submit "Save" %>
+	<%= f.button "Cancel", :name => 'cancel' %>
+
 <% end %>

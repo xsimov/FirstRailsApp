@@ -1,10 +1,12 @@
 class VisitsController < ApplicationController
 
 	def index
+		@location = Location.find(params[:location_id])
 		@visits = Visit.where(location: params[:location_id]).order(created_at: :desc).last_created(10)
 	end
 
 	def show
+		@location = Location.find(params[:location_id])
 		@visits = Visit.where(location: params[:location_id]).find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		render 'not_found', status: 404
@@ -16,16 +18,20 @@ class VisitsController < ApplicationController
 	end
 
 	def create
+
 		@location = Location.find(params[:location_id])
 		@visit = @location.visits.new visit_params
 
-		if @visit.save
-			# redirect_to action: 'index', controller: 'visits', location_id: @location.id
-			redirect_to location_visits_path @location
+		if params[:cancel]
+			redirect_to location_path(@location)
 		else
-			render 'new'
+			if @visit.save
+				# redirect_to action: 'index', controller: 'visits', location_id: @location.id
+				redirect_to location_visits_path @location
+			else
+				render 'new'
+			end
 		end
-
 	end
 
 	private

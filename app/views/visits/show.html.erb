@@ -1,3 +1,4 @@
 <ul>
 	<li><%= @visits.user_name %>: <%= @visits.location_id %> - <%= @visits.from_date %> - <%= @visits.to_date %></li>
 </ul>
+<%= link_to "Back to all visits in #{@location.name}...", location_visits_path(@visits.location_id) %>
