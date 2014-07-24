@@ -1,10 +1,12 @@
-
-
+<h1>All Visits in <%= @location.name %></h1>
+<%= content_tag(:h2, "There are no visits!") unless @visits.length > 0 %>
+<%= content_tag(:h2, flash[:notice]) if flash[:notice] %>
 <ul>
 	<% @visits.each do |visit|  %>
 		<li>
 		<%= link_to visit.user_name, location_visit_path(visit.location_id, visit.id) %>
 		 <%= link_to "Delete visit", location_visit_path(@location, visit), method: 'delete', confirm: "Are you sure?" %>
+		 <%= link_to "Edit visit", edit_location_visit_path(@location, visit) %>
 		</a></li>
 <% end %>
 </ul>

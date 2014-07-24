@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :locations do
     resources :visits
   end
-
+  resources :users
   # get 'home' => 'home#welcome'
 
   # get '/contact' => 'home#contact'

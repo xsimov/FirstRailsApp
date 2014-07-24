@@ -12,3 +12,8 @@ Visit.create user_name: "JoseLuis", from_date: (Time.now + 1.week), to_date: (Ti
 Visit.create user_name: "Xavier", from_date: (Time.now + 4.month), to_date: (Time.now + 2.month), location_id: 2
 Visit.create user_name: "Xavier", from_date: (Time.now + 1.month), to_date: (Time.now + 2.year), location_id: 1
 Visit.create user_name: "JoseLuis", from_date: (Time.now + 1.year), to_date: (Time.now + 1.year + 1.week), location_id: 2
+
+User.create user_name: "xsimov", first_name: "Xavier", last_name: "Simó"
+User.create user_name: "darioc", first_name: "Dario", last_name: "Cavanillas"
+User.create user_name: "elreplicante", first_name: "Sergio", last_name: "Revilla"
+User.create user_name: "kikobeats", first_name: "Kiko", last_name: "Beats"

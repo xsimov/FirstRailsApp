@@ -1,4 +1,4 @@
-<h1>Create a new visit for <%= @location.name %>!</h1>
+<h1>Edit the visit to <%= @location.name %></h1>
 <ul>
 <% @visit.errors.messages.each do |key, error| %>
 	<li><%= key %>
@@ -13,12 +13,13 @@
 
 <%= form_for [@location, @visit] do |f| %>
 	<%= f.label :user_name %>
-	<%= f.text_field :user_name %>
+	<%= f.text_field :user_name, default: @visit.user_name %>
 	<br/>
-	<%= f.datetime_select(:from_date, default: Time.now + 1.day) %>
+	<%= f.datetime_select(:from_date, default: @visit.from_date) %>
 	<br/>
-	<%= f.datetime_select(:to_date, default: Time.now + 1.day) %>
+	<%= f.datetime_select(:to_date, default: @visit.to_date) %>
 	<br/>
 	<%= f.submit "Save" %>
 	<%= f.button "Cancel", :name => 'cancel' %>
+
 <% end %>

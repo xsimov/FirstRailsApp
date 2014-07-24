@@ -32,5 +32,3 @@ RSpec.describe Visit, :type => :model do
 
 	end
 end
-
-expect(subject).to eql(value)

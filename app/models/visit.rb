@@ -1,5 +1,6 @@
 class Visit < ActiveRecord::Base
 	belongs_to :location
+	belongs_to :user
 	scope :last_created, ->(value) { Visit.last(value) }
 
 	validates :user_name, :from_date, :to_date, :location_id, presence: true
