@@ -1,0 +1,26 @@
+<h1>Create a new user:</h1>
+<ul>
+<% @user.errors.messages.each do |key, error| %>
+	<li><%= key %>
+		<ul>
+		<% error.each do |message| %>
+			<li><%= message %></li>
+		<% end %> 
+		</ul>
+	</li>
+<% end %>
+</ul>
+
+<%= form_for @user do |f| %>
+	<%= f.label "Username:" %>
+	<%= f.text_field :user_name %>
+	<br/>
+	<%= f.label "Firstname:" %>
+	<%= f.text_field :first_name %>
+	<br/>
+	<%= f.label "Lastname:" %>
+	<%= f.text_field :last_name %>
+	<br/>
+	<%= f.submit "Save" %>
+	<%= f.button "Cancel", :name => 'cancel' %>
+<% end %>
