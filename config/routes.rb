@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   resources :locations do
     resources :visits
   end
- resources :users do
+  resources :users do
     resources :visits
   end
+
+  resource :search, :only => :create
+
   # get 'home' => 'home#welcome'
 
   # get '/contact' => 'home#contact'

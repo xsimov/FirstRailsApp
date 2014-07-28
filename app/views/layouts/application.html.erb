@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<nav>
+    <section>
+        <%= form_for Search.new do |f| %>
+            <%= f.label "Search by name" %><%= f.text_field :query %>
+            <%= f.submit "Search" %>
+        <% end %>
+    </section>
+</nav>
+
 <%= yield %>
 
 </body>
