@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 	def index
 		@locations = Location.order(created_at: :desc).last_created(10)
-	end
+  end
 	def show
 		@location = Location.find(params[:id])
 	rescue ActiveRecord::RecordNotFound

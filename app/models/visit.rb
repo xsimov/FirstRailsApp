@@ -4,7 +4,6 @@ class Visit < ActiveRecord::Base
 	scope :last_created, ->(value) { Visit.last(value) }
 
 	validates :user_id, :from_date, :to_date, :location_id, presence: true
-	validates :user_id, format: { with: /\A[A-Za-z0-9]*\z/ }
 	validate :from_date_is_in_the_future
 	validate :to_date_is_before_from_date
 

@@ -5,9 +5,14 @@ RSpec.describe User, :type => :model do
 	context "creation" do
 
 		it "has all properties" do
-			var = User.create user_name: "xsimov", first_name: "Xavier", last_name: "Simó"
-			expect(User.find(var.id)).to eq(var)
-		end
+      @user = FactoryGirl.create(:user)
+      expect(User.find(@user.id)).to eq(@user)
+    end
+
+    it "is valid" do
+			@user = FactoryGirl.build(:user_name_invalid)
+      expect(@user).not_to be_valid
+    end
 
 	end
 
