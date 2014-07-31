@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
 	has_many :visits
+	belongs_to :user
 
 	validates :name, :city, presence: true
 	validates :name, uniqueness: true

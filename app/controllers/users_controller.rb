@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		@user = User.new
+		render '/visits/not_found', status: 404
 	end
 
 	def create
