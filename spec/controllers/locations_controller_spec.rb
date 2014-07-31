@@ -9,9 +9,9 @@ RSpec.describe LocationsController, :type => :controller do
 		end
 
 		it "has a 200 status code" do
-	      	get :show,  {:id => @loc.id}
-	      	expect(response.status).to eq(200)
-	    end
+      	get :show,  {:id => @loc.id}
+      	expect(response.status).to eq(200)
+    end
 
 		it "renders show view" do
 			get :show, {:id => @loc.id}
@@ -19,9 +19,9 @@ RSpec.describe LocationsController, :type => :controller do
 		end
 
 		it "has a 404 status code" do
-	      	get :show,  {:id => 3000}
-	      	expect(response.status).to eq(404)
-	    end
+      	get :show,  {:id => 3000}
+      	expect(response.status).to eq(404)
+    end
 
 	end
 
