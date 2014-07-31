@@ -24,6 +24,7 @@ class LocationsController < ApplicationController
 
   def edit
       @location = Location.find(params[:id])
+      render text: "YOU SHALL NOT EDIT!" unless current_user.id == @location.user_id
   end
 
   def update
@@ -40,9 +41,13 @@ class LocationsController < ApplicationController
 
   def destroy
       @location = Location.find(params[:id])
-      @location.delete
-      flash[:notice] = "Congratulations, location was deleted!"
-      redirect_to locations_path
+      if current_user.id == @location.user_id
+        @location.delete
+        flash[:notice] = "Congratulations, location was deleted!"
+        redirect_to locations_path
+      else
+        render text: "YOU SHALL NOT DESTROY OTHER PEOPLE'S LOCATIONS!!"
+      end
   end
 
   def show
@@ -51,6 +56,6 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-      params.require(:location).permit(:name, :city, :country, :description, :zip_code, :street)
+      params.require(:location).permit(:name, :city, :country, :description, :zip_code, :street, :user_id)
   end
 end

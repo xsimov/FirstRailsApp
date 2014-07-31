@@ -12,8 +12,7 @@
 </ul>
 
 <%= form_for [@location, @visit] do |f| %>
-	<%= f.label :user_name %>
-	<%= f.text_field :user_id, default: @visit.user_id %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
 	<br/>
 	<%= f.datetime_select(:from_date, default: @visit.from_date) %>
 	<br/>

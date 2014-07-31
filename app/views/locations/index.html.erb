@@ -2,8 +2,8 @@
 <ul>
 	<% @locations.each do |location|  %>
 	<% if location.name.present? %>
-		<li><%= link_to location.name, location_path(location) %> - <span><%= location.city %></span> </li>
+		<li><%= link_to location.name, location_path(location) %> - <%= location.city %> <%= link_to "Edit", edit_location_path(location) %> <%= link_to "Delete", location_path(location), method: 'Delete' %> </li>
 	<% end %>
 <% end %>
 </ul>
-<%= link_to "Back to the Welcome page", root_path %>
+<%= link_to "Back to the Welcome page", root_path %> <%= link_to "Create a new location", new_location_path %>

@@ -5,7 +5,7 @@ class VisitsController < ApplicationController
 		@visits = Visit.where(location: params[:location_id]).order(created_at: :desc).last_created(10)
 		@user_name = {}
 		@visits.each do |visit|
-			@user_name[visit.id] = User.find(visit.user_id).user_name
+			@user_name[visit.id] = User.find(visit.user_id).email
 		end
 	end
 
