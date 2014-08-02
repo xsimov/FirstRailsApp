@@ -1,0 +1,1 @@
+json.locations_list @locations, :name, :city, :street, :zip_code
