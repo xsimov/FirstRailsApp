@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new location_params
+    binding.pry
     if params[:cancel]
       redirect_to locations_path
     elsif @location.save

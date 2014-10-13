@@ -1,0 +1,1 @@
+json.search_results @results, :name, :city, :street, :zip_code

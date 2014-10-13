@@ -1,0 +1,28 @@
+// Example of a post to 'localhost:3000/locations' to create a new location
+
+{
+  "location": {
+    "name": "Sagrada Família",
+    "city": "Barcelona",
+    "country": "Spain",
+    "description": "Nice church",
+    "zip_code": 08008,
+    "street": "Mallorca, 100",
+    "user_id": 2
+  }
+}
+
+// Example of a post to 'localhost:3000/users' to create a new user
+
+{
+  "user": {
+    "user_name": "Vakz",
+    "city": "Barcelona",
+    "country": "Spain",
+    "description": "Nice church",
+    "zip_code": 08008,
+    "street": "Mallorca, 100",
+    "user_id": 2
+  }
+}
+

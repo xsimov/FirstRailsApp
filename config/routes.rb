@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :locations do
     resources :visits
   end
+  
   resources :users do
     resources :visits
   end

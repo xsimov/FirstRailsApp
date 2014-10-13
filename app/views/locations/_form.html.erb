@@ -1,10 +1,10 @@
 <% if @location.errors.any? %>
-<ul>
-<%= @location.errors.size %>
-<% @location.errors.full_messages.each do |error_message| %>
-<li><%= error_message %></li>
-<% end %>
-</ul>
+    <ul>
+        <%= @location.errors.size %>
+        <% @location.errors.full_messages.each do |error_message| %>
+            <li><%= error_message %></li>
+        <% end %>
+    </ul>
 <% end %>
 
 <%= form_for [@location] do |f| %>
