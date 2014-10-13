@@ -8,7 +8,7 @@ class Search
   def execute!
     case self.field
     when "users"
-      return User.where("user_name ILIKE '%#{self.query}%'")
+      return User.where("username ILIKE '%#{self.query}%'")
     when "locations"
       return Location.where("name ILIKE '%#{self.query}%'")
     end

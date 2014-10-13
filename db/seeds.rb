@@ -13,7 +13,7 @@ Visit.create user_id: 2, from_date: (Time.now + 4.month), to_date: (Time.now + 2
 Visit.create user_id: 3, from_date: (Time.now + 1.month), to_date: (Time.now + 2.year), location_id: 1, user_id: 3
 Visit.create user_id: 1, from_date: (Time.now + 1.year), to_date: (Time.now + 1.year + 1.week), location_id: 2, user_id: 1
 
-User.create user_name: "smitfire", first_name: "Nick", last_name: "Smit"
-User.create user_name: "darioc", first_name: "Dario", last_name: "Cavanillas"
-User.create user_name: "elreplicante", first_name: "Sergio", last_name: "Revilla"
-User.create user_name: "kikobeats", first_name: "Kiko", last_name: "Beats"
+User.create username: "smitfire", firstname: "Nick", lastname: "Smit"
+User.create username: "darioc", firstname: "Dario", lastname: "Cavanillas"
+User.create username: "elreplicante", firstname: "Sergio", lastname: "Revilla"
+User.create username: "kikobeats", firstname: "Kiko", lastname: "Beats"

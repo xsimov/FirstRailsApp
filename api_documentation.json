@@ -1,4 +1,5 @@
-// Example of a post to 'localhost:3000/locations' to create a new location
+// To update just do a PUT with the attributes you want to update to 'localhost:3000/locations/:ID'
+// Example of a POST to 'localhost:3000/locations' to create a new location
 
 {
   "location": {
@@ -12,17 +13,39 @@
   }
 }
 
-// Example of a post to 'localhost:3000/users' to create a new user
+// To update just do a PUT with the attributes you want to update to 'localhost:3000/users/:ID'
+// Example of a POST to 'localhost:3000/users' to create a new user
 
 {
   "user": {
-    "user_name": "Vakz",
-    "city": "Barcelona",
-    "country": "Spain",
-    "description": "Nice church",
-    "zip_code": 08008,
-    "street": "Mallorca, 100",
-    "user_id": 2
+    "username": "Vakz",
+    "password": "12345678",
+    "email": "a@a.com",
+    "firstname": "Fab",
+    "lastname": "Cafe"
+  }
+}
+// To update just do a PUT with the attributes you want to update to 'localhost:3000/locations/:LOCATION_ID/visits/:ID'
+// or 'localhost:3000/users/:USER_ID/visits/:ID'
+// Example of a POST to 'localhost:3000/locations/:LOCATION_ID/visits' to create a new visit
+
+{
+  "visit": {
+    "from_date": "2015-10-13 18:36:15 +0200",
+    "to_date": "2015-10-14 18:36:15 +0200",
+    "user_id": 1,
+    "location_id": 2
   }
 }
 
+// Example of a POST to 'localhost:3000/search' to find out specific users:
+
+{
+  "field": "users",
+  "query": "vak"
+}
+// or locations:
+{
+  "field": "locations",
+  "query": "Familia"
+}

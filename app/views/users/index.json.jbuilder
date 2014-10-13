@@ -1,1 +1,0 @@
-json.users @all_users, :user_name, :first_name, :last_name, :email
